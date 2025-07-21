@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { User, Phone, MapPin, Wheat, Calendar, CheckCircle } from 'lucide-react';
 
-const RegistrationForm: React.FC = () => {
+const RegistrationForm = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     mobile: '',
@@ -30,18 +30,17 @@ const RegistrationForm: React.FC = () => {
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitted(true);
-    
-    // Scroll to farmer story after submission
+
     setTimeout(() => {
       const element = document.getElementById('farmer-story');
       element?.scrollIntoView({ behavior: 'smooth' });
@@ -199,7 +198,6 @@ const RegistrationForm: React.FC = () => {
             </select>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-lg text-lg font-semibold shadow-lg transform hover:scale-[1.02] transition-all duration-200"

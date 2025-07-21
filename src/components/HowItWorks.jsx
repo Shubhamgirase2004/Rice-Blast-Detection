@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserPlus, Database, CloudRain, MessageSquare } from 'lucide-react';
 
-const HowItWorks: React.FC = () => {
+const HowItWorks = () => {
   const steps = [
     {
       icon: UserPlus,
@@ -41,23 +41,19 @@ const HowItWorks: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative">
-              {/* Connection Line */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-12 left-full w-full h-0.5 bg-gradient-to-r from-green-300 to-green-500 z-0"></div>
               )}
-              
+
               <div className="relative bg-green-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300 z-10">
-                {/* Step Number */}
                 <div className="absolute -top-3 -left-3 bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
                   {index + 1}
                 </div>
 
-                {/* Icon */}
                 <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
 
-                {/* Content */}
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {step.title}
                 </h3>
@@ -69,7 +65,6 @@ const HowItWorks: React.FC = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
         <div className="text-center mt-12">
           <div className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">

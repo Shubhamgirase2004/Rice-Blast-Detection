@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dna, Cloud, Voicemail as Soil, MessageCircle, Wifi, Globe } from 'lucide-react';
 
-const Features: React.FC = () => {
+const Features = () => {
   const features = [
     {
       icon: Dna,
@@ -54,30 +54,29 @@ const Features: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              {/* Icon and Highlight */}
-              <div className="flex items-center justify-between mb-4">
-                <div className="bg-green-100 p-3 rounded-lg">
-                  <feature.icon className="w-8 h-8 text-green-600" />
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="bg-green-100 p-3 rounded-lg">
+                    <Icon className="w-8 h-8 text-green-600" />
+                  </div>
+                  <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">
+                    {feature.highlight}
+                  </span>
                 </div>
-                <span className="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-medium">
-                  {feature.highlight}
-                </span>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
-
-              {/* Content */}
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {feature.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Technical Specifications */}
         <div className="mt-16 bg-white rounded-xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Technical Specifications
@@ -102,7 +101,6 @@ const Features: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom CTA */}
         <div className="mt-12 text-center">
           <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">

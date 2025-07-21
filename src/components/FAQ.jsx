@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const FAQ: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
     {
@@ -39,7 +39,7 @@ const FAQ: React.FC = () => {
     }
   ];
 
-  const toggleFAQ = (index: number) => {
+  const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 

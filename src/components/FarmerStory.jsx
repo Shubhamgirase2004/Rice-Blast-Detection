@@ -1,7 +1,7 @@
 import React from 'react';
 import { CheckCircle, Smartphone, CloudRain, Droplets, AlertTriangle } from 'lucide-react';
 
-const FarmerStory: React.FC = () => {
+const FarmerStory = () => {
   const storySteps = [
     {
       title: "Registration",
@@ -40,7 +40,7 @@ const FarmerStory: React.FC = () => {
     }
   ];
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status) => {
     switch (status) {
       case 'completed': return 'bg-green-100 border-green-300 text-green-800';
       case 'warning': return 'bg-yellow-100 border-yellow-300 text-yellow-800';
@@ -50,7 +50,7 @@ const FarmerStory: React.FC = () => {
     }
   };
 
-  const getIconColor = (status: string) => {
+  const getIconColor = (status) => {
     switch (status) {
       case 'completed': return 'text-green-600';
       case 'warning': return 'text-yellow-600';
@@ -72,7 +72,6 @@ const FarmerStory: React.FC = () => {
           </p>
         </div>
 
-        {/* Farmer Profile Card */}
         <div className="bg-white rounded-xl shadow-lg p-6 mb-8 max-w-md mx-auto">
           <div className="flex items-center mb-4">
             <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
@@ -86,41 +85,38 @@ const FarmerStory: React.FC = () => {
           </div>
         </div>
 
-        {/* Timeline */}
         <div className="relative">
-          {/* Timeline line for desktop */}
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-300 to-green-600"></div>
 
           <div className="space-y-8">
-            {storySteps.map((step, index) => (
-              <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Content Card */}
-                <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <div className={`border-2 rounded-xl p-6 ${getStatusColor(step.status)}`}>
-                    <div className="flex items-center mb-3">
-                      <step.icon className={`w-6 h-6 mr-3 ${getIconColor(step.status)}`} />
-                      <h3 className="text-lg font-bold">{step.title}</h3>
+            {storySteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                    <div className={`border-2 rounded-xl p-6 ${getStatusColor(step.status)}`}>
+                      <div className="flex items-center mb-3">
+                        <Icon className={`w-6 h-6 mr-3 ${getIconColor(step.status)}`} />
+                        <h3 className="text-lg font-bold">{step.title}</h3>
+                      </div>
+                      <p className="font-medium mb-2">{step.description}</p>
+                      <p className="text-sm opacity-90">{step.details}</p>
                     </div>
-                    <p className="font-medium mb-2">{step.description}</p>
-                    <p className="text-sm opacity-90">{step.details}</p>
                   </div>
-                </div>
 
-                {/* Timeline Node */}
-                <div className="hidden md:flex w-2/12 justify-center">
-                  <div className="w-8 h-8 bg-white border-4 border-green-500 rounded-full flex items-center justify-center shadow-lg">
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div className="hidden md:flex w-2/12 justify-center">
+                    <div className="w-8 h-8 bg-white border-4 border-green-500 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
                   </div>
-                </div>
 
-                {/* Empty space for alternating layout */}
-                <div className="hidden md:block w-5/12"></div>
-              </div>
-            ))}
+                  <div className="hidden md:block w-5/12"></div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
-        {/* Result Card */}
         <div className="mt-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">Result: Zero Crop Loss!</h3>
           <p className="text-green-100 mb-6 max-w-2xl mx-auto">

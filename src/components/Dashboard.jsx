@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarChart3, Users, Shield, TrendingUp } from 'lucide-react';
 
-const Dashboard: React.FC = () => {
+const Dashboard = () => {
   const stats = [
     {
       icon: Users,
@@ -55,20 +55,23 @@ const Dashboard: React.FC = () => {
 
         {/* Key Statistics */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {stats.map((stat, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center justify-between mb-4">
-                <div className={`p-3 rounded-lg bg-gray-50 ${stat.color}`}>
-                  <stat.icon className="w-6 h-6" />
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`p-3 rounded-lg bg-gray-50 ${stat.color}`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
+                  <p className="text-sm font-medium text-gray-700">{stat.label}</p>
+                  <p className="text-xs text-gray-500">{stat.change}</p>
                 </div>
               </div>
-              <div className="space-y-1">
-                <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                <p className="text-sm font-medium text-gray-700">{stat.label}</p>
-                <p className="text-xs text-gray-500">{stat.change}</p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Risk Distribution Table */}

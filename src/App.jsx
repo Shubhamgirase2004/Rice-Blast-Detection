@@ -8,7 +8,7 @@ import Features from './components/Features';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
-function App() {
+const App = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -21,6 +21,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

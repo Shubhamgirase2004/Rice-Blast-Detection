@@ -1,13 +1,11 @@
 import React from 'react';
 import { Wheat, Phone, Mail, MessageCircle, MapPin, Shield, FileText } from 'lucide-react';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
-      {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand Section */}
           <div>
             <div className="flex items-center mb-6">
               <div className="bg-green-600 p-2 rounded-lg">
@@ -29,7 +27,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact Information */}
           <div>
             <h3 className="text-lg font-bold mb-6">Contact Support</h3>
             <div className="space-y-4">
@@ -64,7 +61,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <div className="space-y-3">
@@ -89,7 +85,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Legal & Compliance */}
           <div>
             <h3 className="text-lg font-bold mb-6">Legal & Compliance</h3>
             <div className="space-y-3">
@@ -106,13 +101,12 @@ const Footer: React.FC = () => {
                 Data Protection
               </a>
             </div>
-            
-            {/* Government Partnership */}
+
             <div className="mt-6 p-4 bg-gray-800 rounded-lg">
               <div className="text-sm text-gray-300 mb-2">In partnership with:</div>
               <div className="text-xs text-gray-400">
-                • Ministry of Agriculture<br/>
-                • Indian Council of Agricultural Research<br/>
+                • Ministry of Agriculture<br />
+                • Indian Council of Agricultural Research<br />
                 • State Agricultural Universities
               </div>
             </div>
@@ -120,7 +114,6 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center">
