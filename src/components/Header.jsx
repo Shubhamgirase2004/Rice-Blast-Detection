@@ -10,6 +10,9 @@ const Header = () => {
   return (
     <header className="relative min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-green-100 flex items-center justify-center overflow-hidden">
       {/* Background Pattern */}
+      {/* <div>
+        <img className='z--1' src="src/images/rice farm.jpg" alt="rice farm" />
+      </div> */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 w-32 h-32 bg-green-600 rounded-full"></div>
         <div className="absolute bottom-20 right-10 w-24 h-24 bg-amber-600 rounded-full"></div>
